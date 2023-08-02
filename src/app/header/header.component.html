@@ -1,0 +1,19 @@
+<header class="common-header">
+    <div style="display: inline-block;" class="brand-logo">
+        <img src="../assets/images/sneaker-brand-logo.png" alt="logo" aria-hidden="true">
+    </div>
+    <div style="display: inline-block;" class="search-space">
+        <input type="text" placeholder="Which Sneaker are you Searching For?" [(ngModel)]="inputText">
+        <button (click)="searchInitiated()"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+    </div>
+    <div style="display: inline-block;" class="sign-in-space">
+        <ul type="none" class="signed-in" *ngIf="isSignedUp == true">
+            <li id="si-icon"><a class="cart-icon"><fa-icon [icon]="faCartShopping"></fa-icon></a></li>
+            <li id="si-icon"><a class="person-icon"><fa-icon [icon]="faUser"></fa-icon></a></li>
+            <li id="si-icon"><a class="log-out" (click)="logOut()">Log Out</a></li>
+        </ul>
+        <div class="not-signed-in" *ngIf="isSignedUp == false">
+            <a (click)="openSignInPage()">Sign Up</a>
+        </div>
+    </div>
+</header>
